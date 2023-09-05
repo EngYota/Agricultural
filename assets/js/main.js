@@ -63,22 +63,6 @@ jQuery(function ($) {
         $('.close-btn').addClass('active');
     });
 
-    // Home Slides
-    $('.home-slides').owlCarousel({
-        loop: true,
-        nav: false,
-        dots: true,
-        rtl: true,
-        autoplayHoverPause: true,
-        autoplay: false,
-        smartSpeed: 1000,
-        animateOut: 'fadeOut',
-        items: 1,
-        navText: [
-            "<i class='flaticon-left-chevron'></i>",
-            "<i class='flaticon-right-chevron'></i>"
-        ]
-    });
     
     // Odometer JS
         $('.odometer').appear(function(e) {
@@ -102,16 +86,6 @@ jQuery(function ($) {
             g.preventDefault();
         });
     })(jQuery);
-
-    // Popup Video
-    $('.popup-youtube').magnificPopup({
-        disableOn: 320,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
 
     // About Slider
     $('.about-slider').owlCarousel({
@@ -176,123 +150,6 @@ jQuery(function ($) {
         }
     });
 
-    // Testimonial Slider
-    $('.testimonials-slider').owlCarousel({
-        loop: true,
-        nav: true,
-        rtl: true,
-        dots: false,
-        autoplayHoverPause: true,
-        autoplay: false,
-        smartSpeed: 1000,
-        items: 4,
-        center: true,
-        margin: 30,
-        navText: [
-            "<i class='flaticon-left'></i>",
-            "<i class='flaticon-right'></i>"
-        ],
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            1200: {
-                items: 4
-            }
-        }
-    });
-
-    // Partner Slider
-    $('.partner-slider').owlCarousel({
-        loop: true,
-        nav: true,
-        rtl: true,
-        dots: false,
-        autoplayHoverPause: true,
-        autoplay: true,
-        navText: [
-            "<i class='flaticon-left-1'></i>",
-            "<i class='flaticon-right-1'></i>"
-        ],
-        responsive: {
-            0: {
-                items: 2,
-            },
-            576: {
-                items: 3,
-            },
-            768: {
-                items: 4,
-            },
-            1200: {
-                items: 5,
-            }
-        }
-    });
-
-    // Client Slider
-    $('.client-slider').owlCarousel({
-        loop: true,
-        nav: true,
-        rtl: true,
-        dots: false,
-        autoplayHoverPause: true,
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 20,
-        navText: [
-            "<i class='flaticon-left'></i>",
-            "<i class='flaticon-right'></i>"
-        ],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            1200: {
-                items: 1,
-            }
-        }
-    });
-
-    // Feedback Slider
-    $('.feedback-slider').owlCarousel({
-        loop: true,
-        nav: false,
-        dots: true,
-        rtl: true,
-        margin: 30,
-        center: true,
-        autoplayHoverPause: true,
-        autoplay: true,
-        navText: [
-            "<i class='flaticon-left-chevron'></i>",
-            "<i class='flaticon-right-chevron'></i>"
-        ],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            1200: {
-                items: 3,
-            },
-            1550: {
-                items: 4,
-            }
-        }
-    });
-
     // Popup Image
     $('a[data-imagelightbox="popup-btn"]')
     .imageLightbox({
@@ -314,53 +171,6 @@ jQuery(function ($) {
             // Removes Active Class From Other Titles
             $('.accordion-title').not($(this)).removeClass('active');		
         });
-    });
-
-    // Subscribe form
-    $(".newsletter-form").validator().on("submit", function (event) {
-        if (event.isDefaultPrevented()) {
-        // handle the invalid form...
-            formErrorSub();
-            submitMSGSub(false, "Please enter your email correctly.");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-        }
-    });
-    function callbackFunction (resp) {
-        if (resp.result === "success") {
-            formSuccessSub();
-        }
-        else {
-            formErrorSub();
-        }
-    }
-    function formSuccessSub(){
-        $(".newsletter-form")[0].reset();
-        submitMSGSub(true, "Thank you for subscribing!");
-        setTimeout(function() {
-            $("#validator-newsletter").addClass('hide');
-        }, 4000)
-    }
-    function formErrorSub(){
-        $(".newsletter-form").addClass("animated shake");
-        setTimeout(function() {
-            $(".newsletter-form").removeClass("animated shake");
-        }, 1000)
-    }
-    function submitMSGSub(valid, msg){
-        if(valid){
-            var msgClasses = "validation-success";
-        } else {
-            var msgClasses = "validation-danger";
-        }
-        $("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-    }
-
-    // AJAX MailChimp
-    $(".newsletter-form").ajaxChimp({
-        url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-        callback: callbackFunction
     });
 
     // Nice Select JS
@@ -421,17 +231,60 @@ jQuery(function ($) {
 		$("html, body").animate({ scrollTop: "0" },  500);
 	});
     
+    // 11. QUICKVIEW POPUP + ZOOM IMAGE + PRODUCT SLIDER JS
+	var image = $('#product_img');
+	var zoomConfig = {};
+	var zoomActive = false;
+	
+    zoomActive = !zoomActive;
+	if(zoomActive) {
+		if ($(window).width() >= 768) {
+			var firstImgHeight = $(".pr_detail").height();
+			var divWidth = $(".pr_detail").width();
+			$("#product_img").elevateZoom({
+				cursor: "crosshair",
+				easing : true, 
+				scrollZoom: true, 
+				gallery:'pr_item_gallery',
+				zoomWindowOffetx: 30, 
+				zoomWindowWidth:divWidth,
+				zoomWindowHeight:firstImgHeight,
+				borderSize: 0,
+				galleryActiveClass: "active"
+			}); 
+		}
+		else {
+			$("#product_img").elevateZoom({
+				cursor: "crosshair",
+				easing : true,  
+				gallery:'pr_item_gallery',
+				zoomType: "inner",
+				galleryActiveClass: "active"
+			}); 
+		}
+	}
+	else {
+			$.removeData(image, 'elevateZoom');//remove zoom instance from image
+			$('.zoomContainer:last-child').remove();// remove zoom container from DOM
+		}
+	
+	$.magnificPopup.defaults.callbacks = {
+    open: function() {
+      $('body').addClass('zoom_image');
+    },
+    close: function() {
+      // Wait until overflow:hidden has been removed from the html tag
+      setTimeout(function() {
+        $('body').removeClass('zoom_image');
+		$('.zoomContainer:last-child').remove();
+      }, 100)
+    }
+  };
     // Preloader
     jQuery(window).on('load', function() {
         $('.preloader').fadeOut();
     });
 }(jQuery));
-
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-    localStorage.setItem('trifles_rtl_theme', themeName);
-    document.documentElement.className = themeName;
-}
 
 $('.carousel_slide3').each( function() {
     var $carousel = $(this);
