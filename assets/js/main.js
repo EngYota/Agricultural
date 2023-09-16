@@ -262,7 +262,33 @@ $('.carousel_slide3').each( function() {
         }
     });
 });
-
+	// Featured Slick Slider
+	$('.featured_slick_gallery-slide').slick({
+		centerMode: true,
+		infinite:true,
+		centerPadding: '0px',
+		slidesToShow:1,
+		responsive: [
+		{
+		breakpoint: 768,
+		settings: {
+		arrows:true,
+		centerMode: true,
+		centerPadding: '20px',
+		slidesToShow:3
+		}
+		},
+		{
+		breakpoint: 480,
+		settings: {
+		arrows: false,
+		centerMode: true,
+		centerPadding: '20px',
+		slidesToShow:1
+		}
+		}
+		]
+	});
 
 // Product-detail
 /*!     
