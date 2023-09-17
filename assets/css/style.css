@@ -6944,25 +6944,26 @@ Team Section CSS
           transform: scale(1);
 }
 
-.order-details .payment-box .default-btn {
+.billing-details .default-btn {
   padding: 14px 30px;
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 400;
   text-decoration: none;
-  color: #333333;
+  color: #196a2f;
   background-color: #ffffff;
+  border: 1px solid #196a2f;
   -webkit-transition: .6s;
   transition: .6s;
 }
 
-.order-details .payment-box .default-btn:hover {
+.billing-details .default-btn:hover {
   background-color: #196a2f;
   color: #ffffff;
 }
 
-.order-details .payment-box .default-btn.order-btn {
+.billing-details .default-btn.order-btn {
   display: block;
   margin-top: 25px;
   -webkit-box-shadow: 0px 5px 28.5px 1.5px rgba(149, 152, 200, 0.2);
