@@ -86,7 +86,6 @@ jQuery(function ($) {
         autoplayHoverPause: true,
         autoplay: true,
         smartSpeed: 1000,
-        items: 2,
         margin: 30,
         navText: [
             "<i class='flaticon-left'></i>",
@@ -97,13 +96,13 @@ jQuery(function ($) {
                 items: 1
             },
             576: {
-                items: 1
+                items: 2
             },
             768: {
-                items: 2
+                items: 3
             },
             1200: {
-                items: 2
+                items: 4
             }
         }
         
@@ -258,6 +257,40 @@ $('.carousel_slide3').each( function() {
             },
             1199: {
                 items: 3
+            }
+        }
+    });
+});
+$('.carousel_slide2').each( function() {
+    var $carousel = $(this);
+    $carousel.owlCarousel({
+        loop: $carousel.data("loop"),
+        margin: $carousel.data("margin"),
+        mouseDrag: $carousel.data("mouse-drag"),
+        touchDrag: $carousel.data("touch-drag"),
+        dots : $carousel.data("dots"),
+        autoHeight: true,
+        rtl:true,
+        center: $carousel.data("center"),
+        autoplay : $carousel.data("autoplay"),
+        nav: $carousel.data("nav"),
+        navText: ['<i class="ion-ios-arrow-back"></i>', '<i class="ion-ios-arrow-forward"></i>'],
+        autoplayTimeout : $carousel.data("autoplay-timeout"),
+        responsive: {
+            0: {
+                items: 1,
+            },
+            380: {
+                items: 1,
+            },
+            576: {
+                items: 2,
+            },
+            1000: {
+                items: 4,
+            },
+            1199: {
+                items: 4
             }
         }
     });
