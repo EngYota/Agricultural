@@ -77,6 +77,37 @@ jQuery(function ($) {
         });
     })(jQuery);
 
+    // banner Slider
+    $('.banner-slider').owlCarousel({
+        loop: true,
+        nav: true,
+        rtl: true,
+        dots: false,
+        autoplayHoverPause: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 30,
+        navText: [
+            "<i class='fas fa-arrow-circle-left'></i>",
+            "<i class='fas fa-arrow-circle-right'></i>"
+        ],
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            1200: {
+                items: 1
+            }
+        }
+        
+    });
+
     // About Slider
     $('.about-slider').owlCarousel({
         loop: true,
@@ -88,8 +119,8 @@ jQuery(function ($) {
         smartSpeed: 1000,
         margin: 30,
         navText: [
-            "<i class='flaticon-left'></i>",
-            "<i class='flaticon-right'></i>"
+            "<i class='fas fa-arrow-circle-left'></i>",
+            "<i class='fas fa-arrow-circle-right'></i>"
         ],
         responsive: {
             0: {
@@ -194,20 +225,6 @@ jQuery(function ($) {
             spinner.find("input").val(newVal);
             spinner.find("input").trigger("change");
         });
-    });
-
-    // WOW JS
-    $(window).on ('load', function (){
-        if ($(".wow").length) { 
-            var wow = new WOW({
-            boxClass:     'wow',      // animated element css class (default is wow)
-            animatedClass: 'animated', // animation css class (default is animated)
-            offset:       20,          // distance to the element when triggering the animation (default is 0)
-            mobile:       true, // trigger animations on mobile devices (default is true)
-            live:         true,       // act on asynchronously loaded content (default is true)
-            });
-            wow.init();
-        }
     });
 
     // Go to Top

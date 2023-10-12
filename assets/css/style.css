@@ -2,7 +2,7 @@
 /*================================================
 Default CSS
 =================================================*/
-@import url(../css/animate.min.css);
+@import url(../css/animate.css);
 @import url(../css/flaticon.css);
 @import url(../css/imagelightbox.min.css);
 @import url(../css/magnific-popup.min.css);
@@ -1410,7 +1410,7 @@ Main Banner Area CSS
 
 .main-banner-content {
   max-width: 680px;
-  margin-top: 112px;
+  margin-top: 35%;
 }
 
 .main-banner-content span {
@@ -3246,21 +3246,35 @@ Start latest Products
   width: 40px;
   text-align: center;
 }
+
 .owl-theme .owl-nav {
   margin-top: 0;
+  display: block !important;
 }
 .nav_top_right.owl-theme .owl-nav .owl-prev {
   right: auto;
-  left: 50px;
+  left: 90px;
 }
 .nav_top_right.owl-theme .owl-nav [class*="owl-"] {
   top: -90px;
   -moz-transform: none;
   -webkittransform: none;
   transform: none;
+  font-size: 21px;
+  line-height: 20px;
+  color: #196a2f;
 }
 .nav_top_right.owl-theme .owl-nav .owl-next {
   right: 0px;
+}
+.about-team .owl-nav .owl-prev{
+  right: auto !important;
+  left: 0px !important;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: #196a2f;
+  color: #FFF;
+  text-decoration: none;
 }
 /*============================================ Partner page ===========================================*/
 .single-partener-box {
