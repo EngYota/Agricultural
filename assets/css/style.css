@@ -662,6 +662,65 @@ Navbar Area CSS
   background: #ffffff;
   color: #196a2f;
 }
+.mada-nav .navbar .others-options .user-btn {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border: 1px solid #b7b7b7;
+  cursor: pointer;
+  color: #b7b7b7;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.mada-nav .navbar .others-options .user-btn i {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.mada-nav .navbar .others-options .user-btn a {
+  color: #b7b7b7;
+  position: relative;
+}
+
+.mada-nav .navbar .others-options .user-btn a span {
+  position: absolute;
+  right: -5px;
+  bottom: 12px;
+  width: 12px;
+  height: 12px;
+  text-align: center;
+  line-height: 12px;
+  border-radius: 50%;
+  background: #196a2f;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 400;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.mada-nav .navbar .others-options .user-btn:hover {
+  background-color: #196a2f;
+  border: 1px solid #196a2f;
+  color: #ffffff;
+}
+
+.mada-nav .navbar .others-options .user-btn:hover a:hover i {
+  color: #ffffff;
+}
+
+.mada-nav .navbar .others-options .user-btn:hover a span {
+  background: #ffffff;
+  color: #196a2f;
+}
 
 .mada-nav .navbar .others-options .burger-menu {
   width: 34px;
@@ -1379,7 +1438,7 @@ Main Banner Area CSS
   background: #fff;
 }
 
-.main-banner-item {
+/* .main-banner-item {
   background-image: url(../../assets/img/main-banner-bg-1.jpg);
   background-position: center center;
   background-size: cover;
@@ -1387,35 +1446,103 @@ Main Banner Area CSS
   padding-top: 200px;
   padding-bottom: 200px;
   background-attachment: fixed;
-}
+} */
 
-.main-banner-item.banner-item-two {
-  background-image: url(../../assets/img/main-banner-bg-2.png);
-  padding-top: 50px;
+.main-banner-item.banner-item-one {
+  background-image: url(../../assets/img/banner/1.jpeg);
+  padding-top: 10px;
   padding-bottom: 0;
   overflow: hidden;
-  background-attachment: unset;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: zoomin .15s ease-in infinite;
+  animation: zoomin 15s ease-in infinite;
+  transition: all .5s ease-in-out;
+  height: 650px;
+  width: 100%;
+  position: relative;
 }
-
-.main-banner-item.banner-item-two .main-banner-content h1 {
-  color: #111111;
+.main-banner-item.banner-item-two {
+  background-image: url(../../assets/img/banner/2.jpeg);
+  padding-top: 10px;
+  padding-bottom: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: zoomin .15s ease-in infinite;
+  animation: zoomin 15s ease-in infinite;
+  transition: all .5s ease-in-out;
+  height: 650px;
+  width: 100%;
+  position: relative;
+}
+.main-banner-item.banner-item-three {
+  background-image: url(../../assets/img/banner/3.jpeg);
+  padding-top: 10px;
+  padding-bottom: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: zoomin .15s ease-in infinite;
+  animation: zoomin 15s ease-in infinite;
+  transition: all .5s ease-in-out;
+  height: 650px;
+  width: 100%;
+  position: relative;
+}
+.overlay{
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgb(70 69 69 / 25%);
+}
+.main-banner-item .main-banner-content h1 {
+  color: #e9e9e9;
   font-size: 40px;
 }
 
-.main-banner-item.banner-item-two .main-banner-content p {
-  color: #6b6b84;
+.main-banner-item .main-banner-content p {
+  color: #f1f1f1;
   margin-bottom: 0;
   margin-right: 0;
 }
 
 .main-banner-content {
   max-width: 680px;
-  margin-top: 35%;
+  margin: auto;
+  margin-top: 100px;
 }
-
+.main-banner-item .main-banner-content::after {
+  background-image: url(../img/banner/main-slider-icon-2-1.png);
+  left: 17%;
+  right: auto;
+}
+.main-banner-item .main-banner-content::before {
+  background-image: url(../img/banner/main-slider-icon-2-2.png);
+  right: 17%;
+  left: auto;
+}
+.main-banner-item .main-banner-content::after,
+.main-banner-item .main-banner-content::before {
+  width: 115px;
+  height: 216px;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+  position: absolute;
+  top: 56%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 .main-banner-content span {
   font-size: 18px;
-  color: #196a2f;
+  color: #ffba0a;
   font-weight: 500;
 }
 
@@ -1458,6 +1585,17 @@ Main Banner Area CSS
   margin-top: 30px;
   height: 600px;
 }
+/* Zoom in Keyframes */
+@-webkit-keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+@keyframes zoomin {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+} /*End of Zoom in Keyframes */
 @-webkit-keyframes moveBounce {
   0% {
     -webkit-transform: translateY(0px);
@@ -3254,6 +3392,10 @@ Start latest Products
 .nav_top_right.owl-theme .owl-nav .owl-prev {
   right: auto;
   left: 90px;
+  top: 50% !important;
+  width: 50px;
+  height: 50px;
+  background: rgb(230, 230, 230);
 }
 .nav_top_right.owl-theme .owl-nav [class*="owl-"] {
   top: -90px;
@@ -3265,7 +3407,12 @@ Start latest Products
   color: #196a2f;
 }
 .nav_top_right.owl-theme .owl-nav .owl-next {
-  right: 0px;
+  right: 90px;
+  left: auto;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background: rgb(230, 230, 230);
 }
 .about-team .owl-nav .owl-prev{
   right: auto !important;
@@ -7358,7 +7505,6 @@ display: block;
 color: #f99459;
 width: 30px;
 height: 30px;
-line-height: 34px;
 border-radius: 50%;
 background-color: #eeeef0;
 text-align: center;
@@ -7684,7 +7830,7 @@ Login In CSS
   height: 60px;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  color: #ffffff;
+  color: #212529;
   padding-left: 20px;
   background: transparent;
 }
@@ -9613,7 +9759,7 @@ Buy Now Btn
   margin: auto 6px;
   padding: 22px 0;
 }
-.main-banner-item.banner-item-two .main-banner-content h1 {
+.main-banner-item .main-banner-content h1 {
     font-size: 35px;
 }
 .about-section {
@@ -9834,7 +9980,7 @@ transition: 0.6s;
   width: 35px;
   padding-top: 10px;
 }
-.main-banner-item.banner-item-two .main-banner-content h1 {
+.main-banner-item  .main-banner-content h1 {
   font-size: 26px;
 }
 .about-section{
@@ -10019,7 +10165,7 @@ transition: 0.6s;
 .mada-responsive-nav .mean-container a.meanmenu-reveal span{
   top: 8px;
 }
-.main-banner-item.banner-item-two .main-banner-content h1 {
+.main-banner-item .main-banner-content h1 {
   font-size: 22px;
 }
 .main-banner-content p{font-size: 15px;line-height: 1.6;}

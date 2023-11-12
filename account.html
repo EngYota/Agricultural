@@ -258,7 +258,7 @@
                                                 <td>1</td>
                                                 <td>5 سبتمبر 2023</td>
                                                 <td>250 جنيه </td>
-                                                <td><a class="view" href="">التفاصيل</a></td>
+                                                <td><a class="view" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">التفاصيل</a></td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -546,7 +546,24 @@
             </div>
         </div>
     </div>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- End Our Account -->
 
 
@@ -685,6 +702,7 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
