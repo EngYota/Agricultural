@@ -6322,7 +6322,7 @@ Team Section CSS
   position: relative;
   display: block;
   background-color: #f1f3f8;
-  padding: 50px 30px 50px;
+  padding: 15px 10px !important;
 }
 
 .sidebar__search-form {
@@ -6337,12 +6337,13 @@ Team Section CSS
   color: #878c8f;
   font-size: 14px;
   font-weight: 500;
-  padding-left: 20px;
-  height: 60px;
+  padding-left: 10px;
+  height: 50px;
   width: 100%;
-  padding-right: 60px;
+  padding-right: 15px;
   border-radius: 3px;
   border: 1px solid #dcdfe2;
+  text-align: right;
 }
 
 .sidebar__search-form ::-webkit-input-placeholder {
@@ -6385,6 +6386,7 @@ Team Section CSS
   position: absolute;
   top: 5px;
   left: 5px;
+  right: auto;
   bottom: 5px;
   width: 50px;
   outline: none;

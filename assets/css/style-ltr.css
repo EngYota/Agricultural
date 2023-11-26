@@ -210,3 +210,10 @@
 
 
 }
+.sidebar__search-form button[type="submit"] {
+    right: 5px;
+    left: auto;
+}
+.sidebar__search-form input[type="search"] {
+    text-align: left;
+}
